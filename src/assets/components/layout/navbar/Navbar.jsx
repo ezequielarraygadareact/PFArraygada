@@ -31,13 +31,13 @@ const Navbar = () => {
                 <Link to="/">
                   <a class="nav-link active">Todas</a>
                 </Link>
-                <Link to="/category/alimentos">
+                <Link to="/category/Alimentos">
                   <a class="nav-link active">Alimentos</a>
                 </Link>
-                <Link to="/category/higiene">
+                <Link to="/category/Higiene">
                   <a class="nav-link active">Higiene</a>
                 </Link>
-                <Link to="/category/medicacion">
+                <Link to="/category/Medicación">
                   <a class="nav-link">Medicación</a>
                 </Link>
               </div>
