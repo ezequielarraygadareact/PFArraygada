@@ -8,9 +8,14 @@ import Typography from "@mui/material/Typography";
 const ItemDetail = ({ producto }) => {
   return (
     <div key={producto.id}>
-      <div>
-        <Card className="card">
-          <CardMedia component="img" height="250" image={producto.img} />
+      <div className="detail">
+        <Card className="icard">
+          <CardMedia
+            component="img"
+            height="250"
+            image={producto.img}
+            className="detailImg"
+          />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {producto.title}
