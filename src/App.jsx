@@ -1,9 +1,9 @@
-import Navbar from "./assets/components/layout/Navbar/Navbar";
-import Cart from "./assets/components/pages/cart/Cart";
-import ItemListConteiner from "./assets/components/pages/itemList/ItemListConteiner";
-import Nf404 from "./assets/components/pages/nf404/nf404";
+import Navbar from "./components/layout/Navbar/Navbar";
+import Cart from "./components/pages/cart/Cart";
+import ItemListConteiner from "./components/pages/itemList/ItemListConteiner";
+import Nf404 from "./components/pages/nf404/nf404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemDetailConteiner from "./assets/components/pages/ItemDetail/ItemDetailConteiner";
+import ItemDetailConteiner from "./components/pages/ItemDetail/ItemDetailConteiner";
 
 function App() {
   return (
