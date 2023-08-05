@@ -1,8 +1,8 @@
 import "./ItemListConteiner.css";
 import ItemList from "./ItemList";
-import { products } from "../../../productsMocks";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { products } from "../../../productsMocks";
 
 const ItemListConteiner = () => {
   const [items, setItems] = useState([]);
