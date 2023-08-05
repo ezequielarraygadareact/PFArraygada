@@ -4,8 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import CounterContainer from "../../common/counter/CounterContainer";
+import { ToastContainer } from "react-toastify";
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ producto, onAdd, totalQuantity}) => {
   return (
     <div key={producto.id}>
       <div className="detail">
@@ -32,6 +34,12 @@ const ItemDetail = ({ producto }) => {
           </CardActions>
         </Card>
       </div>
+      <CounterContainer
+        stock={producto.stock}
+        onAdd={onAdd}
+        initial={totalQuantity}
+      />
+      <ToastContainer />
     </div>
   );
 };
