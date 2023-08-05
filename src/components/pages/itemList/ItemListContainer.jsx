@@ -1,10 +1,10 @@
-import "./ItemListConteiner.css";
+import "./ItemListContainer.css";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../../../productsMocks";
 
-const ItemListConteiner = () => {
+const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState({});
 
@@ -26,4 +26,4 @@ const ItemListConteiner = () => {
   return <ItemList items={items} />;
 };
 
-export default ItemListConteiner;
+export default ItemListContainer;

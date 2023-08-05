@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import CartWidget from "../../common/CartWidget/CartWidget";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -46,7 +46,6 @@ const Navbar = () => {
           <CartWidget />
         </nav>
       </div>
-      <Outlet />
     </>
   );
 };

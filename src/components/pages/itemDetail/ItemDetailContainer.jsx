@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { products } from "../../../productsMocks";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import "./ItemDetailConteiner.css";
+import "./ItemDetailContainer.css";
 
-const ItemDetailConteiner = () => {
+const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
   const { id } = useParams();
 
@@ -24,4 +24,4 @@ const ItemDetailConteiner = () => {
   return <ItemDetail producto={producto} />;
 };
 
-export default ItemDetailConteiner;
+export default ItemDetailContainer;

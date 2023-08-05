@@ -1,7 +1,7 @@
 import "./Footer.css";
 
 const Footer = () => {
-  return <div></div>;
+  return <div> Acá va el footer, a construir.</div>;
 };
 
 export default Footer;
