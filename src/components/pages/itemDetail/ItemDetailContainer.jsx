@@ -11,8 +11,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
@@ -39,20 +38,18 @@ const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
     let productCart = { ...producto, quantity: cantidad };
     addToCart(productCart);
-    toast.success("Producto agregado exitosamente", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+    console.log(productCart);
+
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+      footer: '<a href="">Why do I have this issue?</a>',
     });
   };
 
   return (
-    <div className="detail" key={producto.id}>
+    <div className="detail">
       <Card className="icard">
         <CardMedia
           component="img"
@@ -79,7 +76,6 @@ const ItemDetailContainer = () => {
           onAdd={onAdd}
           initial={totalQuantity}
         />
-        <ToastContainer />
       </div>
     </div>
   );
