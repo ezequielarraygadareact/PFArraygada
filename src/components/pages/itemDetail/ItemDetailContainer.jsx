@@ -73,12 +73,14 @@ const ItemDetailContainer = () => {
         </CardContent>
         <CardActions></CardActions>
       </Card>
-      <CounterContainer
-        stock={producto.stock}
-        onAdd={onAdd}
-        initial={totalQuantity}
-      />
-      <ToastContainer />
+      <div>
+        <CounterContainer
+          stock={producto.stock}
+          onAdd={onAdd}
+          initial={totalQuantity}
+        />
+        <ToastContainer />
+      </div>
     </div>
   );
 };
