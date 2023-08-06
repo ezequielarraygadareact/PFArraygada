@@ -1,6 +1,6 @@
 import { Button, ButtonGroup } from "@mui/material";
 
-const Counter = ({ contador, sumar, restar, OnAdd }) => {
+const Counter = ({ contador, sumar, restar, onAdd }) => {
   return (
     <div>
       <h3>{contador}</h3>
@@ -10,7 +10,7 @@ const Counter = ({ contador, sumar, restar, OnAdd }) => {
       >
         <Button onClick={restar}>-</Button>
         <Button onClick={sumar}>+</Button>
-        <Button onClick={OnAdd}>Agregar al carrito</Button>
+        <Button onClick={onAdd}>Agregar al carrito</Button>
       </ButtonGroup>
     </div>
   );

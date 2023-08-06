@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 //Logica
 import { useEffect, useState, useContext } from "react";
 import { products } from "../../../productsMocks";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
@@ -17,7 +17,6 @@ const ItemDetailContainer = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
   const [producto, setProducto] = useState({});
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const totalQuantity = getQuantityById(id);
 
@@ -41,10 +40,9 @@ const ItemDetailContainer = () => {
     console.log(productCart);
 
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-      footer: '<a href="">Why do I have this issue?</a>',
+      icon: "success",
+      title: "Producto agregado",
+      text: "Producto agregado al carrito correctamente",
     });
   };
 

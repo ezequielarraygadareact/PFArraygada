@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <Link to="/">
             <img
               className="logo"
@@ -14,9 +14,9 @@ const Navbar = () => {
               alt="Logo"
             />
           </Link>
-          <div class="container-fluid">
+          <div className="container-fluid">
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup"
@@ -24,26 +24,26 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
                 <Link to="/">
-                  <a class="nav-link active">Todas</a>
+                  <a className="nav-link active">Todas</a>
                 </Link>
                 <Link to="/category/Alimentos">
-                  <a class="nav-link active">Alimentos</a>
+                  <a className="nav-link active">Alimentos</a>
                 </Link>
                 <Link to="/category/Higiene">
-                  <a class="nav-link active">Higiene</a>
+                  <a className="nav-link active">Higiene</a>
                 </Link>
                 <Link to="/category/Medicación">
-                  <a class="nav-link">Medicación</a>
+                  <a className="nav-link">Medicación</a>
                 </Link>
               </div>
             </div>
+            <CartWidget />
           </div>
-          <CartWidget />
         </nav>
       </div>
     </>

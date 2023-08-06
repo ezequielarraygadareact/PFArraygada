@@ -1,18 +1,19 @@
-import { IconButton } from "@mui/material";
-import "./CartWidget.css";
-import Badge from "@mui/material/Badge";
+import { Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
 const CartWidget = () => {
+  const { getTotalQuantity } = useContext(CartContext);
+  let total = getTotalQuantity();
   return (
     <div className="LogoCarrito">
       <Link to="/cart">
-        <IconButton aria-label="cart">
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCartIcon />
-          </Badge>
-        </IconButton>
+        <Badge badgeContent={total} showZero>
+          <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+        </Badge>
       </Link>
     </div>
   );
