@@ -22,7 +22,7 @@ const ItemList = ({ items }) => {
                   {elemento.description}
                 </Typography>
                 <Typography gutterBottom variant="h5" component="div">
-                  {elemento.price}
+                  $ {elemento.price}
                 </Typography>
               </CardContent>
               <CardActions>
