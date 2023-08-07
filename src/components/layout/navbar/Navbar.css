@@ -1,3 +1,7 @@
 .logo {
   width: 20%;
 }
+.barra {
+  display: flex;
+  justify-content: space-around;
+}

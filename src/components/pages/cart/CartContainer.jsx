@@ -1,6 +1,13 @@
+//Recursos
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Swal from "sweetalert2";
+//Logica
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
-import Swal from "sweetalert2";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice } =
@@ -26,27 +33,43 @@ const CartContainer = () => {
   };
 
   return (
-    <div>
-      <h1>Carritoooo</h1>
-
+    <div className="contenedorCarrito">
       {cart.map((elemento) => {
         return (
-          <div key={elemento.id} style={{ border: "2px solid black" }}>
-            <h4>{elemento.title}</h4>
-            <h5>{elemento.price}</h5>
-            <h5>{elemento.quantity}</h5>
-            <button onClick={() => deleteById(elemento.id)}>
-              Eliminar producto
-            </button>
+          <div key={elemento.id} className="cardCarrito">
+            <Card sx={{ minWidth: 275 }}>
+              <CardContent>
+                <Typography variant="h5" component="div">
+                  {elemento.title}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  Cantidad: {elemento.quantity}
+                </Typography>
+                <Typography variant="body1">$ {elemento.price}</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" onClick={() => deleteById(elemento.id)}>
+                  Eliminar
+                </Button>
+              </CardActions>
+            </Card>
           </div>
         );
       })}
 
       {cart.length > 0 && (
-        <button onClick={limpiar}>Vaciar carrito de compras</button>
+        <Button size="small" onClick={limpiar}>
+          Vaciar carrito de compras
+        </Button>
       )}
 
-      <h2>El total es: {total}</h2>
+      <h2>El total es: $ {total}</h2>
+
+      {cart.length > 0 && (
+        <Button size="small" onClick="">
+          Finalizar compra
+        </Button>
+      )}
     </div>
   );
 };

@@ -23,11 +23,9 @@ const Navbar = () => {
               aria-controls="navbarNavAltMarkup"
               aria-expanded="false"
               aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+            ></button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
+              <div className="navbar-nav barra">
                 <Link to="/">
                   <a className="nav-link active">Todas</a>
                 </Link>
@@ -38,7 +36,7 @@ const Navbar = () => {
                   <a className="nav-link active">Higiene</a>
                 </Link>
                 <Link to="/category/Medicación">
-                  <a className="nav-link">Medicación</a>
+                  <a className="nav-link active">Medicación</a>
                 </Link>
               </div>
             </div>
