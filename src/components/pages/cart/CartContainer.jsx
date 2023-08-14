@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Swal from "sweetalert2";
+import { CardMedia } from "@mui/material";
 //Logica
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
@@ -47,6 +48,7 @@ const CartContainer = () => {
                 </Typography>
                 <Typography variant="body1">$ {elemento.price}</Typography>
               </CardContent>
+              <CardMedia component="img" height="250" image={elemento.img} />
               <CardActions>
                 <Button size="small" onClick={() => deleteById(elemento.id)}>
                   Eliminar
