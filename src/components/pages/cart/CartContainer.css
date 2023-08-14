@@ -1,8 +1,4 @@
 .contenedorCarrito {
   display: flex;
-  flex-flow: column;
-  align-content: center;
-}
-.cardCarrito {
-  border: 2px solid black;
+  flex-direction: row;
 }
