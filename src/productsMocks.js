@@ -1,21 +1,21 @@
 export let products = [
   {
     id: 1,
-    title: "Vivaz 15kg Perros",
+    title: "Vagoneta 15kg Perros",
     price: 7200,
     stock: 6,
     description: "Comidas Vivaz para perros adultos de 15kgs.",
     category: "Alimentos",
-    img: "https://imageup.me/images/7cf83f31-9c55-47f8-baa9-1e925e337948.jpeg",
+    img: "https://i.postimg.cc/jDtYKWSB/vagonetaperros.jpg",
   },
   {
     id: 2,
-    title: "Vivaz 20kg Gatos",
+    title: "Vagoneta 20kg Gatos",
     price: 6000,
     stock: 4,
     description: "Comidas Vivaz para gatos adultos de 20kgs.",
     category: "Alimentos",
-    img: "https://imageup.me/images/5983d675-e14b-42ed-a101-b70486087575.jpeg",
+    img: "https://i.postimg.cc/NKDq0gyF/vagonetagatos.jpg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export let products = [
     stock: 3,
     description: "Pastillas anticonceptivas para perros, 10u",
     category: "Medicación",
-    img: "https://imageup.me/images/54ea4c30-1c67-40e6-8742-0e8e4db6903a.jpeg",
+    img: "https://i.postimg.cc/dZCcQrdc/anticonceptivos.jpg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export let products = [
     stock: 2,
     description: "Pastillas anticonceptivas para gatos, 10u",
     category: "Medicación",
-    img: "https://imageup.me/images/54ea4c30-1c67-40e6-8742-0e8e4db6903a.jpeg",
+    img: "https://i.postimg.cc/dZCcQrdc/anticonceptivos.jpg",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export let products = [
     stock: 7,
     description: "Pipeta para gatos medianos de 2 a 4 kg.",
     category: "Higiene",
-    img: "https://imageup.me/images/cf84fd9c-c7ba-4e2a-8430-f6c3616d906b.jpeg",
+    img: "https://i.postimg.cc/SJWbwLkW/pipetagato.jpg",
   },
   {
     id: 6,
@@ -51,6 +51,6 @@ export let products = [
     stock: 6,
     description: "Pipeta para perros medianos de 10 a 20 kg.",
     category: "Higiene",
-    img: "https://imageup.me/images/66496593-01e3-4880-bc55-79df21e6aa65.jpeg",
+    img: "https://i.postimg.cc/2Vpfc9Rk/pipetaperro.jpg",
   },
 ];

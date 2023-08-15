@@ -33,7 +33,7 @@ const CheckoutContainer = () => {
               <CardMedia
                 component="img"
                 sx={{ width: 151, height: 160 }}
-                image={elemento.image}
+                image={elemento.img}
               />
             </Card>
           </div>

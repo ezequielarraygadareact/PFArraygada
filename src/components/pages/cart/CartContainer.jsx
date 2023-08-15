@@ -54,7 +54,7 @@ const CartContainer = () => {
               <CardMedia
                 component="img"
                 sx={{ width: 151 }}
-                image={elemento.image}
+                image={elemento.img}
               />
               <CardActions>
                 <Button size="small" onClick={() => deleteById(elemento.id)}>
