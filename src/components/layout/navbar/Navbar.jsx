@@ -25,7 +25,7 @@ const Navbar = () => {
               aria-label="Toggle navigation"
             ></button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav barra">
+              <div className="barra">
                 <Link to="/">
                   <a className="nav-link active">Todas</a>
                 </Link>
