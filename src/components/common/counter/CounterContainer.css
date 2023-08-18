@@ -1,0 +1,9 @@
+.contador{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    }
+    .cont{
+        margin-right: 5%;
+    }

@@ -2,6 +2,7 @@
   width: 500px;
   height: auto;
   margin-top: 3%;
+  align-self: center;
 }
 .detail {
   width: 100%;

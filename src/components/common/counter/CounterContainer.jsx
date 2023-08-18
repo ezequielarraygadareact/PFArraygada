@@ -1,5 +1,6 @@
 import Counter from "./counter";
 import { useState } from "react";
+import "./CounterContainer.css"
 
 const CounterContainer = ({ stock, onAdd, initial = 1 }) => {
   const [contador, setContador] = useState(initial);

@@ -39,7 +39,7 @@ const CartContainer = () => {
       {cart.map((elemento) => {
         return (
           <div key={elemento.id} className="contenedorCarrito">
-            <Card sx={{ display: "flex", with: "auto" }}>
+            <Card sx={{ display: "flex", border: "1px solid black", width:"600px" }}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
@@ -57,7 +57,7 @@ const CartContainer = () => {
                 image={elemento.img}
               />
               <CardActions>
-                <Button size="small" onClick={() => deleteById(elemento.id)}>
+                <Button size="small" onClick={() => deleteById(elemento.id)} sx={{marginLeft:"20%"}}>
                   Eliminar
                 </Button>
               </CardActions>
