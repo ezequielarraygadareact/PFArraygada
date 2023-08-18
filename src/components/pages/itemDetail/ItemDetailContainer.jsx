@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
-
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
@@ -40,9 +40,11 @@ const ItemDetailContainer = () => {
     console.log(productCart);
 
     Swal.fire({
-      icon: "success",
-      title: "Producto agregado",
-      text: "Producto agregado al carrito correctamente",
+      position: 'top-cen',
+      icon: 'success',
+      title: 'Su producto fue agregado al carrito',
+      showConfirmButton: false,
+      timer: 1100
     });
   };
 
