@@ -4,11 +4,13 @@ import CartContextComponent from "./context/CartContext";
 
 function App() {
   return (
+      <div>
     <BrowserRouter>
       <CartContextComponent>
         <AppRouter />
       </CartContextComponent>
     </BrowserRouter>
+      </div>
   );
 }
 

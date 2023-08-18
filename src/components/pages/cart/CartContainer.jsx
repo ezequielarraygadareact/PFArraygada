@@ -39,7 +39,7 @@ const CartContainer = () => {
       {cart.map((elemento) => {
         return (
           <div key={elemento.id} className="contenedorCarrito">
-            <Card sx={{ display: "flex", border: "1px solid black", width:"600px" }}>
+            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginLeft:"3%" }}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
@@ -66,6 +66,7 @@ const CartContainer = () => {
         );
       })}
 
+    <div className="total">
       {cart.length > 0 && (
         <Button size="small" onClick={limpiar}>
           Vaciar carrito de compras
@@ -81,6 +82,7 @@ const CartContainer = () => {
           </Button>
         </Link>
       )}
+      </div>
     </div>
   );
 };

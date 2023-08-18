@@ -18,7 +18,7 @@ const CheckoutContainer = () => {
       {cart.map((elemento) => {
         return (
           <div key={elemento.id}>
-            <Card sx={{ display: "flex" }}>
+            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginLeft:"25%" }}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
