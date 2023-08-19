@@ -13,17 +13,24 @@ const NavbarLay = () => {
       <div>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">Veterinaria Peyret</Navbar.Brand>
+        <Link to ="/" style={{textDecoration: 'none'}}>
+        <Navbar.Brand>Veterinaria Peyret</Navbar.Brand>
+        </Link> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Todos los productos</Nav.Link>
+          <Nav className="me-auto"  style={{marginLeft:"20%"}}>
             <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/category/Alimentos">Alimentos</NavDropdown.Item>
-              <NavDropdown.Item href="/category/Higiene">Higiene</NavDropdown.Item>
-              <NavDropdown.Item href="/category/Medicación">Medicación</NavDropdown.Item>
+              <Link to ="/category/Alimentos" style={{textDecoration: 'none'}}>
+              <NavDropdown.ItemText > Alimentos</NavDropdown.ItemText>
+              </Link>
+              <Link to ="/category/Higiene" style={{textDecoration: 'none'}}>
+              <NavDropdown.ItemText>Higiene</NavDropdown.ItemText>
+              </Link>
+              <Link to ="/category/Medicación" style={{textDecoration: 'none'}}> 
+              <NavDropdown.ItemText>Medicación</NavDropdown.ItemText>
+              </Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="">
+              <NavDropdown.Item>
                 Ofertas (proximamente) 
               </NavDropdown.Item>
             </NavDropdown>
