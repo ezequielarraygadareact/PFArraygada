@@ -1,0 +1,10 @@
+.footerContenedor{
+    display: flex;
+    flex-direction: row;
+}
+.redes{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}

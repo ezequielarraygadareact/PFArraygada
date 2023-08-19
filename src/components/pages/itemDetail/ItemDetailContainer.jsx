@@ -1,17 +1,20 @@
-//mui
+//Recursos
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import Swal from "sweetalert2";
 //Logica
 import { useEffect, useState, useContext } from "react";
-import { products } from "../../../productsMocks";
 import { useParams } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
-import Swal from "sweetalert2";
+import { getDoc, collection, doc } from "firebase/firestore"
+import { dat } from "../../../firebaseconfig";
+
+
 
 const ItemDetailContainer = () => {
   const { addToCart, getQuantityById } = useContext(CartContext);
@@ -21,30 +24,23 @@ const ItemDetailContainer = () => {
   const totalQuantity = getQuantityById(id);
 
   useEffect(() => {
-    let productoSeleccionado = products.find(
-      (elemento) => elemento.id === parseInt(id)
-    );
-
-    const tarea = new Promise((resolve, reject) => {
-      resolve(productoSeleccionado);
-    });
-
-    tarea.then((resolve) => {
-      setProducto(resolve);
-    });
+  let productsCollection = collection(dat , "products" )
+  let selectCollection = doc(productsCollection , id )
+  getDoc(selectCollection).then( (d) => {
+    setProducto({...d.data(), id: d.id});
+  });
   }, [id]);
 
   const onAdd = (cantidad) => {
-    let productCart = { ...producto, quantity: cantidad };
+    let productCart = { ...producto , quantity: cantidad };
     addToCart(productCart);
-    console.log(productCart);
 
     Swal.fire({
-      position: 'top-cen',
+      position: 'center',
       icon: 'success',
       title: 'Su producto fue agregado al carrito',
       showConfirmButton: false,
-      timer: 1100
+      timer: 1100,
     });
   };
 
