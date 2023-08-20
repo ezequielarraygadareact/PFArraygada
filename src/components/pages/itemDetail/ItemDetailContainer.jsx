@@ -66,12 +66,17 @@ const ItemDetailContainer = () => {
         </CardContent>
         <CardActions></CardActions>
       </Card>
-      <div>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+        {producto.stock > 0 ? 
         <CounterContainer
-          stock={producto.stock}
-          onAdd={onAdd}
-          initial={totalQuantity}
-        />
+        stock={producto.stock}
+        onAdd={onAdd}
+        initial={totalQuantity}
+      /> :
+      <Typography variant="h3" style={{alignSelf:"center"}} >
+        NO HAY STOCK
+      </Typography>
+      }
       </div>
     </div>
   );

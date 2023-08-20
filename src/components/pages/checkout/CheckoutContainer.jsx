@@ -14,11 +14,11 @@ const CheckoutContainer = () => {
   let total = getTotalPrice();
 
   return (
-    <div className="contenedorCheckout">
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
       {cart.map((elemento) => {
         return (
           <div key={elemento.id}>
-            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginLeft:"25%" }}>
+            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginTop:"3%"}}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
@@ -39,8 +39,10 @@ const CheckoutContainer = () => {
           </div>
         );
       })}
-      <h3>El total es: $ {total}</h3>
-      <FormularioCheckOut />
+      <Typography variant="subtitle1" component="h2" style={{alignSelf:"center"}}>
+      El total es: $ {total}
+     </Typography>
+      <FormularioCheckOut/>
     </div>
   );
 };

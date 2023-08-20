@@ -1,5 +1,4 @@
 import { Button, TextField } from "@mui/material";
-import "./FormularioCheckOut.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -73,7 +72,7 @@ const FormularioCheckOut = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="FormularioCheckOut">
+      <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px"}}>
         <TextField
           type="text"
           label="Nombre/s"

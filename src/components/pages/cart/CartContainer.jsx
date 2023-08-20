@@ -72,7 +72,9 @@ const CartContainer = () => {
         </Button>
       )}
 
-      <h2>El total es: $ {total}</h2>
+      <Typography variant="subtitle1" component="h2" ml={6}>
+      El total es: $ {total}
+     </Typography>
 
       {cart.length > 0 && (
         <Link to="/checkout">
