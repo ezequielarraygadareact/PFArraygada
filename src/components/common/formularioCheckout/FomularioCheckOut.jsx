@@ -1,9 +1,20 @@
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+// Logica
+import { useContext, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
+
+
 
 const FormularioCheckOut = () => {
-  const { handleSubmit, handleChange, errors } = useFormik({
+
+  const { cart, getTotalPrice } =
+  useContext(CartContext);
+
+  const [orderID, setOrderID] = useState("");
+
+   let {errors} = useFormik({
     initialValues: {
       name: "",
       lastName: "",
@@ -16,18 +27,17 @@ const FormularioCheckOut = () => {
       cp: "",
       phone: "",
     },
-    onSubmit: (data) => {
-      console.log(data);
-    },
+
+
     validationSchema: Yup.object({
       name: Yup.string()
         .required("Este dato es obligatorio")
-        .min(2, "El nombre debe tener al menos 5 caracteres")
+        .min(2, "El nombre debe tener al menos 2 caracteres")
         .max(20),
       lastName: Yup.string()
         .required("Este dato es obligatorio")
-        .min(2, "El nombre debe tener al menos 5 caracteres")
-        .max(15),
+        .min(2, "El apellido debe tener al menos 2 caracteres")
+        .max(30),
       dni: Yup.string()
         .required("Este dato es obligatorio")
         .matches(/^\d{1,2}\.?\d{3}\.?\d{3}$/, {
@@ -57,7 +67,7 @@ const FormularioCheckOut = () => {
       cp: Yup.string()
         .required("Este dato es obligatorio")
         .matches(/^\d{1,4}$/, {
-          message: "Esa no es una localidad",
+          message: "Ese no es un código postal valido, poner solo los 4 números.",
         }),
       phone: Yup.string()
         .required("Este dato es obligatorio")
@@ -68,7 +78,40 @@ const FormularioCheckOut = () => {
     }),
     validateOnChange: false,
   });
-  console.log(errors);
+
+
+  const handleSubmit = (evento) => {
+    evento.preventDefault();
+    console.log(order)
+ };
+  const handleChange = (evento) => {
+   setData({ ...data, [evento.target.name]: evento.target.value });
+ };
+
+  const [data, setData] = useState({
+    name: "",
+    lastName: "", 
+    dni: "",
+    email: "",      
+    street: "",
+    nstreet: "",
+    province: "",
+    location: "",      
+    cp: "",
+    phone: "",
+  });
+
+  let total = getTotalPrice()
+
+
+let order = {
+  buyer: data,
+  items: cart,
+  total,
+};
+
+
+
 
   return (
     <div>
@@ -81,6 +124,7 @@ const FormularioCheckOut = () => {
           name="name"
           onChange={handleChange}
           helperText={errors.name}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -90,6 +134,7 @@ const FormularioCheckOut = () => {
           name="lastName"
           onChange={handleChange}
           helperText={errors.lastName}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -99,6 +144,7 @@ const FormularioCheckOut = () => {
           name="dni"
           onChange={handleChange}
           helperText={errors.dni}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -108,6 +154,7 @@ const FormularioCheckOut = () => {
           name="email"
           onChange={handleChange}
           helperText={errors.email}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -117,6 +164,7 @@ const FormularioCheckOut = () => {
           name="street"
           onChange={handleChange}
           helperText={errors.street}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -126,6 +174,7 @@ const FormularioCheckOut = () => {
           name="nstreet"
           onChange={handleChange}
           helperText={errors.nstreet}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -135,6 +184,7 @@ const FormularioCheckOut = () => {
           name="province"
           onChange={handleChange}
           helperText={errors.province}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -144,6 +194,7 @@ const FormularioCheckOut = () => {
           name="location"
           onChange={handleChange}
           helperText={errors.location}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -153,6 +204,7 @@ const FormularioCheckOut = () => {
           name="cp"
           onChange={handleChange}
           helperText={errors.cp}
+          style={{marginBottom:"1%"}}
         />
         <TextField
           type="text"
@@ -163,8 +215,8 @@ const FormularioCheckOut = () => {
           onChange={handleChange}
           helperText={errors.phone}
         />
-        <Button type="submit" variant="contained">
-          Enviar
+        <Button type="submit" variant="contained" style={{marginTop:"2%"}}>
+          Finalizar compra 
         </Button>
       </form>
     </div>

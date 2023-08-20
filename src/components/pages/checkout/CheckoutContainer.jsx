@@ -39,7 +39,7 @@ const CheckoutContainer = () => {
           </div>
         );
       })}
-      <Typography variant="subtitle1" component="h2" style={{alignSelf:"center"}}>
+      <Typography variant="h5" component="h2" style={{alignSelf:"center", marginTop:"1%", marginBottom:"1%" }}>
       El total es: $ {total}
      </Typography>
       <FormularioCheckOut/>

@@ -13,6 +13,7 @@ import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
 import { getDoc, collection, doc } from "firebase/firestore"
 import { dat } from "../../../firebaseconfig";
+import { ProductionQuantityLimits } from "@mui/icons-material";
 
 
 
@@ -67,16 +68,25 @@ const ItemDetailContainer = () => {
         <CardActions></CardActions>
       </Card>
       <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-        {producto.stock > 0 ? 
-        <CounterContainer
+        {(typeof(totalQuantity) === "undefined" || producto.stock > totalQuantity) &&
+        producto.stock > 0 && (
+          <CounterContainer
         stock={producto.stock}
         onAdd={onAdd}
         initial={totalQuantity}
-      /> :
-      <Typography variant="h3" style={{alignSelf:"center"}} >
-        NO HAY STOCK
+      />
+        )}
+        {producto.stock === 0 && 
+      <Typography variant="h5" style={{alignSelf:"center",  marginTop:"2%"}} >
+        FUERA DE STOCK
       </Typography>
       }
+      {typeof(totalQuantity) !== "undefined" &&
+      totalQuantity === producto.stock && (
+        <Typography variant="subtitle1" style={{alignSelf:"center", marginTop:"2%"}} >
+        Usted cuenta con la cantidad maxima en el carrito
+      </Typography>
+      )}
       </div>
     </div>
   );

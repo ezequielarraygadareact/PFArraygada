@@ -8,9 +8,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 const NavbarLay = () => {
-  return (
+  return ( 
     <>
-      <div>
+      <div  >
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Link to ="/" style={{textDecoration: 'none'}}>

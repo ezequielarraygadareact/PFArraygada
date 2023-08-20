@@ -26,7 +26,6 @@ const ItemListContainer = () => {
       let products = res.docs.map(docs =>{
         return {...docs.data(), id: docs.id}
       }  )
-      console.log(products)
       setItems(products)
     })
 

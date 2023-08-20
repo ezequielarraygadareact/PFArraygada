@@ -38,7 +38,7 @@ const CartContainer = () => {
       {cart.map((elemento) => {
         return (
           <div key={elemento.id} className="contenedorCarrito">
-            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginLeft:"3%" }}>
+            <Card sx={{ display: "flex", border: "1px solid black", width:"600px", marginLeft:"3%", marginTop:"2%" }}>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <CardContent>
                   <Typography variant="h5" component="div">
@@ -67,19 +67,19 @@ const CartContainer = () => {
 
     <div className="total">
       {cart.length > 0 && (
-        <Button size="small" onClick={limpiar}>
+        <Button variant="contained" onClick={limpiar} style={{marginLeft:"3%", marginTop:"1%"}}>
           Vaciar carrito de compras
         </Button>
       )}
 
-      <Typography variant="subtitle1" component="h2" ml={6}>
+      <Typography variant="h4" component="h4" ml={6} style={{marginBottom:"1%", marginTop:"1%"}}> 
       El total es: $ {total}
      </Typography>
 
       {cart.length > 0 && (
         <Link to="/checkout">
-          <Button size="small" onClick="">
-            Finalizar compra
+          <Button variant="contained" style={{marginLeft:"3%"}}>
+            Realizar pedido
           </Button>
         </Link>
       )}
