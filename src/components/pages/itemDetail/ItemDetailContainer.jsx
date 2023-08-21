@@ -67,7 +67,7 @@ const ItemDetailContainer = () => {
         </CardContent>
         <CardActions></CardActions>
       </Card>
-      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"1%"}}>
         {(typeof(totalQuantity) === "undefined" || producto.stock > totalQuantity) &&
         producto.stock > 0 && (
           <CounterContainer
