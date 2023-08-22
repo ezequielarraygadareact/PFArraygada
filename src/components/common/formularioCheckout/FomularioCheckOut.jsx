@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const FormularioCheckOut = () => {
 
-  const { cart, getTotalPrice } =
+  const { cart, getTotalPrice, clearCart } =
   useContext(CartContext);
 
    let {errors} = useFormik({
@@ -124,7 +124,6 @@ let order = {
   total,
   date: serverTimestamp(),
 };
-
 
 
 
