@@ -1,6 +1,5 @@
 export let products = [
   {
-    id: 1,
     title: "Vagoneta 15kg Perros",
     price: 7200,
     stock: 6,
@@ -9,7 +8,6 @@ export let products = [
     img: "https://i.postimg.cc/jDtYKWSB/vagonetaperros.jpg",
   },
   {
-    id: 2,
     title: "Vagoneta 20kg Gatos",
     price: 6000,
     stock: 4,
@@ -18,7 +16,6 @@ export let products = [
     img: "https://i.postimg.cc/NKDq0gyF/vagonetagatos.jpg",
   },
   {
-    id: 3,
     title: "Anticonceptivos para perros",
     price: 1500,
     stock: 3,
@@ -27,7 +24,6 @@ export let products = [
     img: "https://i.postimg.cc/dZCcQrdc/anticonceptivos.jpg",
   },
   {
-    id: 4,
     title: "Anticonceptivos para gatos",
     price: 1600,
     stock: 2,
@@ -36,7 +32,6 @@ export let products = [
     img: "https://i.postimg.cc/dZCcQrdc/anticonceptivos.jpg",
   },
   {
-    id: 5,
     title: "Pipeta para gatos medianos",
     price: 2500,
     stock: 7,
@@ -45,7 +40,6 @@ export let products = [
     img: "https://i.postimg.cc/SJWbwLkW/pipetagato.jpg",
   },
   {
-    id: 6,
     title: "Pipeta para perros medianos",
     price: 3400,
     stock: 6,
