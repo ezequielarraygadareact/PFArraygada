@@ -71,10 +71,17 @@ const CartContainer = () => {
           Vaciar carrito de compras
         </Button>
       )}
+    {cart.length > 0 ? (
+        <Typography variant="h4" component="h4" ml={6} style={{marginBottom:"1%", marginTop:"1%"}}> 
+        El total es: $ {total}
+       </Typography>
+      ): (
+        <Typography variant="h5" component="h4" ml={60} mt={60} style={{marginBottom:"1%", marginTop:"1%"}}> 
+        No hay productos en el carrito.
+       </Typography>
+      )}
 
-      <Typography variant="h4" component="h4" ml={6} style={{marginBottom:"1%", marginTop:"1%"}}> 
-      El total es: $ {total}
-     </Typography>
+
 
       {cart.length > 0 && (
         <Link to="/checkout">
