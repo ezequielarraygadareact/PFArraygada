@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { dat } from "../../../firebaseconfig";
 import {addDoc, collection, serverTimestamp, updateDoc, doc} from "firebase/firestore"
+import { Link } from "react-router-dom";
 
 
 
@@ -158,6 +159,7 @@ let order = {
           <Typography variant="body1" style={{display:"block"}}>
           Télefono: {data.phone}
         </Typography>
+
           </div>
           <div style={{display:"flex", flexDirection:"column", alignItems:"center", marginLeft:"5%" }}>
         <Typography variant="h5">
@@ -166,7 +168,11 @@ let order = {
         <Typography variant="h4">
          #{orderID}
         </Typography>
-          
+        <Link to="/">
+        <Button variant="contained" style={{marginTop:"2%"}}>
+          Seguir comprando
+        </Button>
+        </Link>
           </div>
         </div>
         
