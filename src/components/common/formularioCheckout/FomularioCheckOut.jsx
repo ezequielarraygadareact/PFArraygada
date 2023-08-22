@@ -87,7 +87,12 @@ const FormularioCheckOut = () => {
     evento.preventDefault();
     console.log(order)
     addDoc( ordersCollection, order).then(oid => setOrderID(oid.id))
- 
+    
+    cart.forEach((product) => {
+      updateDoc(doc(dat, "products", product.id), {
+        stock: product.stock - product.quantity,
+      });
+    });
  };
 
   console.log(orderID)
@@ -119,8 +124,8 @@ let order = {
   date: serverTimestamp(),
 };
 
-// let refDoc = doc(dat, "products", id)
-// updateDoc( refDoc, {stock: 20})
+
+
 
 
   return (
