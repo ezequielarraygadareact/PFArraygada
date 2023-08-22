@@ -1,9 +1,11 @@
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // Logica
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
+import { dat } from "../../../firebaseconfig";
+import {addDoc, collection, serverTimestamp, updateDoc, doc} from "firebase/firestore"
 
 
 
@@ -11,8 +13,6 @@ const FormularioCheckOut = () => {
 
   const { cart, getTotalPrice } =
   useContext(CartContext);
-
-  const [orderID, setOrderID] = useState("");
 
    let {errors} = useFormik({
     initialValues: {
@@ -26,8 +26,9 @@ const FormularioCheckOut = () => {
       location: "",
       cp: "",
       phone: "",
+      
     },
-
+    validateOnChange: false,
 
     validationSchema: Yup.object({
       name: Yup.string()
@@ -76,18 +77,25 @@ const FormularioCheckOut = () => {
             "Por favor poner su telefono con el codigo de area sin el 15",
         }),
     }),
-    validateOnChange: false,
   });
 
+  const [orderID, setOrderID] = useState("");
+
+  const ordersCollection = collection(dat, "orders");
 
   const handleSubmit = (evento) => {
     evento.preventDefault();
     console.log(order)
- };
-  const handleChange = (evento) => {
-   setData({ ...data, [evento.target.name]: evento.target.value });
+    addDoc( ordersCollection, order).then(oid => setOrderID(oid.id))
+ 
  };
 
+  console.log(orderID)
+
+
+ const handleChange = (evento) => {
+  setData({ ...data, [evento.target.name]: evento.target.value });
+};
   const [data, setData] = useState({
     name: "",
     lastName: "", 
@@ -108,14 +116,33 @@ let order = {
   buyer: data,
   items: cart,
   total,
+  date: serverTimestamp(),
 };
 
-
+// let refDoc = doc(dat, "products", id)
+// updateDoc( refDoc, {stock: 20})
 
 
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px"}}>
+      {orderID ? ( 
+        
+        <div>
+          <div>
+          <Typography variant="h2">
+          Su num {data.name}
+        </Typography>
+          </div>
+          <div>
+        <Typography variant="h2">
+          Su num {orderID}
+        </Typography>
+          </div>
+        </div>
+        
+        
+        ):(
+        <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px"}}>
         <TextField
           type="text"
           label="Nombre/s"
@@ -125,7 +152,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.name}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Apellido/s"
@@ -155,7 +182,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.email}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Calle"
@@ -165,7 +192,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.street}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Número"
@@ -175,7 +202,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.nstreet}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Provincia"
@@ -185,7 +212,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.province}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Localidad"
@@ -205,7 +232,7 @@ let order = {
           onChange={handleChange}
           helperText={errors.cp}
           style={{marginBottom:"1%"}}
-        />
+          />
         <TextField
           type="text"
           label="Teléfono"
@@ -214,11 +241,12 @@ let order = {
           name="phone"
           onChange={handleChange}
           helperText={errors.phone}
-        />
+          />
         <Button type="submit" variant="contained" style={{marginTop:"2%"}}>
           Finalizar compra 
         </Button>
       </form>
+    ) }
     </div>
   );
 };
