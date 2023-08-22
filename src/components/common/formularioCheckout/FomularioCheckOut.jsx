@@ -87,7 +87,7 @@ const FormularioCheckOut = () => {
     evento.preventDefault();
     console.log(order)
     addDoc( ordersCollection, order).then(oid => setOrderID(oid.id))
-    
+
     cart.forEach((product) => {
       updateDoc(doc(dat, "products", product.id), {
         stock: product.stock - product.quantity,
@@ -132,16 +132,41 @@ let order = {
     <div>
       {orderID ? ( 
         
-        <div>
-          <div>
-          <Typography variant="h2">
-          Su num {data.name}
+        <div style={{display:"flex", flexDirection:"row", }}>
+          <div style={{flexDirection:"column"}}>
+          <Typography variant="h5" style={{display:"block"}}>
+          Sus datos:
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          Nombre: {data.name}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          Apellido: {data.lastName}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          DNI: {data.dni}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          Email: {data.email}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          Dirección: {data.street} N° {data.nstreet}, {data.location}, {data.province}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          CP: {data.cp}
+          </Typography>
+          <Typography variant="body1" style={{display:"block"}}>
+          Télefono: {data.phone}
         </Typography>
           </div>
-          <div>
-        <Typography variant="h2">
-          Su num {orderID}
+          <div style={{display:"flex", flexDirection:"column", alignItems:"center", marginLeft:"5%" }}>
+        <Typography variant="h5">
+             Su numero de orden es:
         </Typography>
+        <Typography variant="h4">
+         #{orderID}
+        </Typography>
+          
           </div>
         </div>
         
