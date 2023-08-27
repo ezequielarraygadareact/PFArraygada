@@ -127,7 +127,6 @@ let order = {
 
 
 
-
   return (
     <div>
       {orderID ? ( 
@@ -168,7 +167,7 @@ let order = {
          #{orderID}
         </Typography>
         <Link to="/">
-        <Button variant="contained" style={{marginTop:"2%"}}>
+        <Button variant="contained" style={{marginTop:"2%"}} onClick={clearCart}>
           Seguir comprando
         </Button>
         </Link>

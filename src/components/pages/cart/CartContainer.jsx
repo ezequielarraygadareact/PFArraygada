@@ -77,7 +77,7 @@ const CartContainer = () => {
        </Typography>
       ): (
         <Typography variant="h5" component="h4" ml={60} mt={60} style={{marginBottom:"1%", marginTop:"1%"}}> 
-        No hay productos en el carrito.
+     
        </Typography>
       )}
 

@@ -3,6 +3,8 @@ import Layout from "../components/layout/Layout";
 import Nf404 from "../components/pages/nf404/Nf404";
 
 import { routes } from "./routes";
+import Dashboard from "../components/pages/dashboard/Dashboard";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const AppRouter = () => {
   return (
@@ -12,6 +14,10 @@ const AppRouter = () => {
           <Route key={id} path={path} element={<Element />} />
         ))}
       </Route>
+
+    <Route element={<ProtectedRoutes/>}>
+    <Route path="dashboard" element={<Dashboard/>}/>
+    </Route>
 
       <Route path="*" element={<Nf404 />} />
     </Routes>

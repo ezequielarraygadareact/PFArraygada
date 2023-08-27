@@ -4,12 +4,12 @@ import { initializeApp } from "firebase/app"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD4JRhnjsonWNBziLu8To1B0G6diggh3c8",
-  authDomain: "veterinaria-peyret.firebaseapp.com",
-  projectId: "veterinaria-peyret",
-  storageBucket: "veterinaria-peyret.appspot.com",
-  messagingSenderId: "514791540644",
-  appId: "1:514791540644:web:99ee5726af4db2cbaaa331"
+  apiKey: import.meta.env.VITE_APYKEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
 };
  
 // Initialize Firebase
