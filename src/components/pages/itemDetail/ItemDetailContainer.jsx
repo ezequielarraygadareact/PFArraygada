@@ -11,8 +11,9 @@ import { useParams } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./ItemDetailContainer.css";
 import { CartContext } from "../../../context/CartContext";
-import { getDoc, collection, doc } from "firebase/firestore"
-import { dat } from "../../../firebaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore";
+import { dat } from "../../../firebaseconfig";
+
 
 
 
