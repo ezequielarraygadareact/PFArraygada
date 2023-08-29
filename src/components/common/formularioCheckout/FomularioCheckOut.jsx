@@ -4,7 +4,7 @@ import * as Yup from "yup";
 // Logica
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
-import { dat } from "../../../firebaseconfig";
+import { dat } from "../../../firebaseConfig";
 import {addDoc, collection, serverTimestamp, updateDoc, doc} from "firebase/firestore"
 import { Link } from "react-router-dom";
 
