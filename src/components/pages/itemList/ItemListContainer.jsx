@@ -2,7 +2,7 @@ import "./ItemListContainer.css";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { dat } from "../../../firebaseconfig.js";
+import { dat } from "../../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 
