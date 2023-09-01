@@ -215,17 +215,20 @@ export default function EnhancedTable() {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    // Consulta los productos de la colección "products"
-    const fetchProducts = async () => {
+    const fetchProducts = () => {
       const productsCollection = collection(dat, 'products');
-      const productsSnapshot = await getDocs(productsCollection);
-      const productsData = productsSnapshot.docs.map((doc) => doc.data());
-      setRows(productsData); 
+      getDocs(productsCollection)
+        .then((productsSnapshot) => {
+          const productsData = productsSnapshot.docs.map((doc) => doc.data());
+          setRows(productsData);
+        })
+        .catch((error) => {
+          // Manejar el error en caso de que ocurra
+          console.log(error);
+        });
     };
-
     fetchProducts();
   }, []);
-
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -277,7 +280,6 @@ export default function EnhancedTable() {
 
   const isSelected = (title) => selected.indexOf(title) !== -1;
 
-  // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
