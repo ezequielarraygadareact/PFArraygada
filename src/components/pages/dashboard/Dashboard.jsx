@@ -141,6 +141,10 @@ function EnhancedTableHead(props) {
   );
 }
 
+let Editar = () => {
+  
+}
+
 EnhancedTableHead.propTypes = {
   numSelected: PropTypes.number.isRequired,
   onRequestSort: PropTypes.func.isRequired,
@@ -185,8 +189,8 @@ function EnhancedTableToolbar(props) {
       )}
 
       {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
+        <Tooltip title="Editar">
+          <IconButton onClick={{Editar()}}>
             <DeleteIcon />
           </IconButton>
         </Tooltip>
