@@ -190,7 +190,7 @@ function EnhancedTableToolbar(props) {
 
       {numSelected > 0 ? (
         <Tooltip title="Editar">
-          <IconButton onClick={{Editar()}}>
+          <IconButton onClick={{Editar}}>
             <DeleteIcon />
           </IconButton>
         </Tooltip>
